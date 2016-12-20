@@ -1,7 +1,7 @@
 # Process this file with autoconf to produce a configure script
 
 AC_PREREQ(2.59)
-AC_INIT([libpainter], [0.1.0], [xrdp-devel@lists.sourceforge.net])
+AC_INIT([libpainter], [0.1.0], [xrdp-devel@googlegroups.com])
 AC_CONFIG_HEADERS(config_ac.h:config_ac-h.in)
 AM_INIT_AUTOMAKE([1.6 foreign])
 AC_CONFIG_MACRO_DIR([m4])
