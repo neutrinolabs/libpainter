@@ -33,12 +33,12 @@ painter_create(void **handle)
     {
         return PT_ERROR_PARAM;
     }
-    *handle = malloc(sizeof(struct painter));
+
+    *handle = calloc(1, sizeof(struct painter));
     if (*handle == NULL)
     {
         return PT_ERROR_OUT_OF_MEM;
     }
-    memset(*handle, 0, sizeof(struct painter));
 
     pt = (struct painter *) *handle;
     pt->rop = PT_ROP_S;
