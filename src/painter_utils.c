@@ -255,7 +255,7 @@ painter_set_pixel(struct painter *painter, struct painter_bitmap *bitmap,
 }
 
 /*****************************************************************************/
-/* return true is the is something to draw */
+/* return true if there is something to draw */
 int
 painter_warp_coords(struct painter *painter,
                     int *x, int *y, int *cx, int *cy,
