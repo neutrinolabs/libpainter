@@ -13,8 +13,6 @@ PKG_INSTALLDIR
 # Use silent rules by default if supported by Automake
 m4_ifdef([AM_SILENT_RULES], [AM_SILENT_RULES([yes])])
 
-AM_CONDITIONAL(GOT_PREFIX, test "x${prefix}" != "xNONE"])
-
 AC_ARG_ENABLE(tests, AS_HELP_STRING([--enable-tests],
               [Build install tests (default: no)]),
               [], [enable_tests=no])
