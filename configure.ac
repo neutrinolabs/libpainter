@@ -18,10 +18,6 @@ AC_ARG_ENABLE(tests, AS_HELP_STRING([--enable-tests],
               [], [enable_tests=no])
 AM_CONDITIONAL(PT_TESTS, [test x$enable_tests = xyes])
 
-if test "x${prefix}" = "xNONE" ; then
-sysconfdir="/etc";
-fi
-
 AC_CONFIG_FILES([
   Makefile
   include/Makefile
