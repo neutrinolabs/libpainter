@@ -1,0 +1,16 @@
+sudo: false # use new container
+language: c
+
+branches:
+  except: /^(gh-pages|v[0-9]\..*)/
+
+compiler:
+  - clang
+  - gcc
+  - g++
+
+script:
+  - ./bootstrap
+  - ./configure
+  - make CFLAGS="-O2 -Wall -Wwrite-strings -Werror"
+  - make distcheck
