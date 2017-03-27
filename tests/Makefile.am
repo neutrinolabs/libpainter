@@ -4,11 +4,6 @@ EXTRA_INCLUDES =
 EXTRA_LIBS =
 EXTRA_FLAGS =
 
-if GOT_PREFIX
-EXTRA_INCLUDES += -I$(prefix)/include
-EXTRA_FLAGS += -L$(prefix)/lib -Wl,-rpath -Wl,$(prefix)/lib
-endif
-
 AM_CPPFLAGS = \
   -I$(top_srcdir)/include \
   $(EXTRA_INCLUDES)

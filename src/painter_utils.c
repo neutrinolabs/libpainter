@@ -16,6 +16,10 @@
  * limitations under the License.
  */
 
+#if defined(HAVE_CONFIG_H)
+#include <config_ac.h>
+#endif
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -255,7 +259,7 @@ painter_set_pixel(struct painter *painter, struct painter_bitmap *bitmap,
 }
 
 /*****************************************************************************/
-/* return true is the is something to draw */
+/* return true if there is something to draw */
 int
 painter_warp_coords(struct painter *painter,
                     int *x, int *y, int *cx, int *cy,
