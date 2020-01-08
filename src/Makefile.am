@@ -19,3 +19,5 @@ libpainter_la_SOURCES = painter.c painter_utils.c painter_utils.h
 
 libpainter_la_LIBADD =
 
+cppcheck-local:
+	$(AM_V_at)$(CPPCHECK_DEFRULE)

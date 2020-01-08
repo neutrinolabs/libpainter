@@ -9,6 +9,7 @@ AC_PROG_CC
 AC_C_CONST
 AC_PROG_LIBTOOL
 PKG_INSTALLDIR
+AM_EXTRA_RECURSIVE_TARGETS([cppcheck])
 
 # Use silent rules by default if supported by Automake
 m4_ifdef([AM_SILENT_RULES], [AM_SILENT_RULES([yes])])
@@ -20,6 +21,11 @@ AC_ARG_ENABLE(tests, AS_HELP_STRING([--enable-tests],
               [Build install tests (default: no)]),
               [], [enable_tests=no])
 AM_CONDITIONAL(PT_TESTS, [test x$enable_tests = xyes])
+
+# Support for cppcheck static analyser
+AC_SUBST([CPPCHECK], 'cppcheck')
+AC_SUBST([CPPCHECK_FLAGS], '--std=c11 --quiet --error-exitcode=1')
+AC_SUBST([CPPCHECK_DEFRULE], '$(CPPCHECK) $(CPPCHECK_FLAGS) $(DEFS) $(AM_CPPFLAGS) $(DEFAULT_INCLUDES) $(INCLUDES) $(SOURCES)')
 
 AC_CONFIG_FILES([
   Makefile

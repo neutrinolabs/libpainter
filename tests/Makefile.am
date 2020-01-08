@@ -17,3 +17,5 @@ paintertest_LDADD = \
 
 paintertest_LDFLAGS = $(EXTRA_FLAGS)
 
+cppcheck-local:
+	$(AM_V_at)$(CPPCHECK_DEFRULE)
