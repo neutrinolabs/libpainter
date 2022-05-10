@@ -11,7 +11,7 @@ AM_CFLAGS = \
 
 lib_LTLIBRARIES = libpainter.la
 
-libpainter_la_LDFLAGS =
+libpainter_la_LDFLAGS = -all-static
 
 libpainter_ladir = $(moduledir)
 
