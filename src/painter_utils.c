@@ -29,7 +29,7 @@
 
 /*****************************************************************************/
 /* do a raster op */
-int
+static int
 do_rop(int rop, int src, int dst)
 {
     switch (rop)
@@ -151,7 +151,7 @@ bitmap_set_pixel(struct painter_bitmap *bitmap, int x, int y, int pixel)
 }
 
 /*****************************************************************************/
-int
+static int
 pixel_convert(int pixel, int src_format, int dst_format, int *palette)
 {
     int a;
