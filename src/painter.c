@@ -283,6 +283,14 @@ painter_copy(void *handle, struct painter_bitmap *dst,
             bpp = src->format >> 24;
             if (painter_warp_coords(pt, &x, &y, &cx, &cy, &srcx, &srcy))
             {
+                // Check the source rectangle is entirely within the
+                // source bitmap
+                if (srcx < 0 || (srcx + cx) > src->width ||
+                    srcy < 0 || (srcy + cy) > src->height)
+                {
+                    return PT_ERROR_PARAM;
+                }
+
                 /* straight right or down */
                 if ((srcy < y) || ((srcy == y) && (srcx < x)))
                 {
